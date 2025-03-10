@@ -1,6 +1,4 @@
-
-
-// last part...
+// Task List
 
 document.getElementById("my_index").addEventListener("click",function(e){
 
@@ -9,6 +7,7 @@ document.getElementById("my_index").addEventListener("click",function(e){
 
 
 
+    
 
 })
 
@@ -16,335 +15,67 @@ function goBack() {
     window.location.href = "./index.html"; // Change this to your actual home page URL
 }
 
+const tasks = [
+    { id: "com1", taskName: "Fix Mobile Button Issue" },
+    { id: "com2", taskName: "Add Dark Mode" },
+    { id: "com3", taskName: "Optimize Home Page" },
+    { id: "com4", taskName: "Add new emoji 🤲" },
+    { id: "com5", taskName: "Integrate OpenAI API" },
+    { id: "com6", taskName: "Improve Job Searching" }
+];
 
+// Common function to handle task completion
+function completeTask(taskId, taskName) {
+    let res1 = document.getElementById("five");
+    let res3 = parseInt(res1.innerText);
 
+    let res4 = document.getElementById("big");
+    let res6 = parseInt(res4.innerText);
 
+    const button = document.getElementById(taskId);
+    button.disabled = true;
 
+    if (res3 && res6) {
+        res1.innerText = --res3;
+        res4.innerText = ++res6;
 
+        alert("Board updated successfully");
+        if (res3 === 0) {
+            alert("Congratulations! You have completed all the current tasks.");
+        }
 
+        let now = new Date();
+        let currentTime = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
 
-document.getElementById("com1").addEventListener("click",function(e){
-e.preventDefault();
-let res1=document.getElementById("five");
-let res2 =res1.innerText;
-let res3=parseInt(res2);
-
-
-let res4=document.getElementById("big");
-let res5 =res4.innerText;
-let res6=parseInt(res5);
-
-// capturing the button using its id
-const button1 = document.getElementById("com1");
-
-
-
-  button1.disabled = true;
-
-if(res3 && res6)
-{
-res3--;
-res1.innerText=res3;
-res6++;
-res4.innerText=res6;
-if(res3>=1){
-
-    alert("Board updated Sucessfully")
-}
-else{
-    alert("Board updated Sucessfully");
-    alert("congrates!!! You have completed all the current task");
-}
-
-
-
-const tansac1=document.getElementById("transac_container");
-
-let now = new Date();
-let currentTime = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-
-
-
-    const div = document.createElement("div");
-    div.innerHTML=`<h1> You have complete the task Fix Mobile Button Issue  at ${currentTime}</h1>`
-    
-    
-
-    tansac1.appendChild(div);
-
-    
-}
-
-})
-document.getElementById("com2").addEventListener("click",function(){
-
-let res1=document.getElementById("five");
-let res2 =res1.innerText;
-let res3=parseInt(res2);
-
-
-let res4=document.getElementById("big");
-let res5 =res4.innerText;
-let res6=parseInt(res5);
-const button1 = document.getElementById("com2");
-
-
-
-  button1.disabled = true;
-if(res3 && res6)
-{
-res3--;
-res1.innerText=res3;
-res6++;
-res4.innerText=res6;
-if(res3>=1){
-
-    alert("Board updated Sucessfully")
-}
-else{
-    alert("Board updated Sucessfully");
-    alert("congrates!!! You have completed all the current task");
-}
-
-const tansac1=document.getElementById("transac_container");
-
-let now = new Date();
-let currentTime = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-
-
-
-    const div = document.createElement("div");
-    div.innerHTML=`<h1> You have complete the task Add Dark Mode  at ${currentTime}</h1>`
-    
-    
-
-    tansac1.appendChild(div);
-
-    
-}
-
-})
-document.getElementById("com3").addEventListener("click",function(){
-
-let res1=document.getElementById("five");
-let res2 =res1.innerText;
-let res3=parseInt(res2);
-
-
-let res4=document.getElementById("big");
-let res5 =res4.innerText;
-let res6=parseInt(res5);
-const button1 = document.getElementById("com3");
-
-
-
-  button1.disabled = true;
-if(res3 && res6)
-{
-res3--;
-res1.innerText=res3;
-res6++;
-res4.innerText=res6;
-if(res3>=1){
-
-    alert("Board updated Sucessfully")
-}
-else{
-    alert("Board updated Sucessfully");
-    alert("congrates!!! You have completed all the current task");
-}
-
-
-const tansac1=document.getElementById("transac_container");
-
-let now = new Date();
-let currentTime = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-
-
-
-    const div = document.createElement("div");
-    div.innerHTML=`<h1> You have complete the task Optimize Home page  at ${currentTime}</h1>`
-    
-    
-
-    tansac1.appendChild(div);
-
-    
-}
-
-})
-document.getElementById("com4").addEventListener("click",function(){
-
-let res1=document.getElementById("five");
-let res2 =res1.innerText;
-let res3=parseInt(res2);
-
-
-let res4=document.getElementById("big");
-let res5 =res4.innerText;
-let res6=parseInt(res5);
-const button1 = document.getElementById("com4");
-
-
-
-  button1.disabled = true;
-if(res3 && res6)
-    if(res3>=1){
-
-        alert("Board updated Sucessfully")
+        const transactionContainer = document.getElementById("transac_container");
+        const div = document.createElement("div");
+        div.innerHTML = `<h1>You have completed the task: ${taskName} at ${currentTime}</h1>`;
+        transactionContainer.appendChild(div);
     }
-    else{
-        alert("Board updated Sucessfully");
-        alert("congrates!!! You have completed all the current task");
-    }
-{
-res3--;
-res1.innerText=res3;
-res6++;
-res4.innerText=res6;
-
-
-const tansac1=document.getElementById("transac_container");
-
-let now = new Date();
-let currentTime = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-
-
-
-    const div = document.createElement("div");
-    div.innerHTML=`<h1> You have complete the task Add new emoji 🤲   at ${currentTime}</h1>`
-    
-    
-
-    tansac1.appendChild(div);
-
-    
 }
 
+
+tasks.forEach(task=>{
+document.getElementById(task.id).addEventListener("click",function(){
+    completeTask(task.id,task.taskName);
 })
-document.getElementById("com5").addEventListener("click",function(){
-
-let res1=document.getElementById("five");
-let res2 =res1.innerText;
-let res3=parseInt(res2);
-
-
-let res4=document.getElementById("big");
-let res5 =res4.innerText;
-let res6=parseInt(res5);
-const button1 = document.getElementById("com5");
+});
 
 
 
-  button1.disabled = true;
-if(res3 && res6)
-{
-res3--;
-res1.innerText=res3;
-res6++;
-res4.innerText=res6;
-if(res3>=1){
+// Attach event listeners dynamically
+// tasks.forEach(task => {
+//     document.getElementById(task.id).addEventListener("click", function () {
+//         completeTask(task.id, task.taskName);
+//     });
+// });
 
-    alert("Board updated Sucessfully")
-}
-else{
-    alert("Board updated Sucessfully");
-    alert("congrates!!! You have completed all the current task");
-}
+// Clear transaction history
+document.getElementById("clear").addEventListener("click", function () {
+    document.getElementById("transac_container").innerHTML = "";
+});
 
-
-const tansac1=document.getElementById("transac_container");
-
-let now = new Date();
-let currentTime = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-
-
-
-    const div = document.createElement("div");
-    div.innerHTML=`<h1> You have complete the task Integrate OpenAI API  at ${currentTime}</h1>`
-    
-    
-
-    tansac1.appendChild(div);
-
-    
-}
-
-})
-document.getElementById("com6").addEventListener("click",function(){
-
-let res1=document.getElementById("five");
-let res2 =res1.innerText;
-let res3=parseInt(res2);
-
-
-let res4=document.getElementById("big");
-let res5 =res4.innerText;
-let res6=parseInt(res5);
-const button1 = document.getElementById("com6");
-
-
-
-  button1.disabled = true;
-if(res3 && res6)
-{
-res3--;
-res1.innerText=res3;
-res6++;
-res4.innerText=res6;
-if(res3>=1){
-
-    alert("Board updated Sucessfully")
-}
-else{
-    alert("Board updated Sucessfully");
-    alert("congrates!!! You have completed all the current task");
-}
-
-
-const tansac1=document.getElementById("transac_container");
-
-let now = new Date();
-let currentTime = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-
-
-
-    const div = document.createElement("div");
-    div.innerHTML=`<h1> You have complete the task Improve Job searching   at ${currentTime}</h1>`
-    
-    
-
-    tansac1.appendChild(div);
-
-    
-}
-
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- document.getElementById("clear").addEventListener("click", function()
-
-{const div=document.getElementById("transac_container");
-
-    div.innerHTML="";
-
-})
-// color change randomly...
-
-
+// Random background color change
 document.getElementById("divID").addEventListener("click", function () {
     document.body.style.backgroundColor = `rgba(${randomColor()}, ${randomColor()}, ${randomColor()}, 1)`;
 });
@@ -353,22 +84,5 @@ function randomColor() {
     return Math.floor(Math.random() * 256);
 }
 
-
-
-
-  const tansac1=document.getElementById("my_jul");
-  let now = new Date();
-  let currentTime = new Date().toDateString();
-  
-  
-  
-      const div = document.createElement("div");
-      div.innerHTML=`
-      ${currentTime}`
-      
-      
-  
-      tansac1.appendChild(div);
-
-
-
+// Display current date
+document.getElementById("my_jul").innerHTML = new Date().toDateString();
