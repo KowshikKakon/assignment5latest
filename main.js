@@ -55,12 +55,24 @@ function completeTask(taskId, taskName) {
 }
 
 
-tasks.forEach(task=>{
-document.getElementById(task.id).addEventListener("click",function(){
-    completeTask(task.id,task.taskName);
-})
-});
+// tasks.forEach(task=>{
+// document.getElementById(task.id).addEventListener("click",function(){
+//     completeTask(task.id,task.taskName);
 
+
+
+
+// })
+// });
+
+
+for (let x of tasks) 
+{
+  document.getElementById(x.id).addEventListener("click",function(){
+
+    completeTask(x.id,x.taskName);
+  }) 
+}
 
 
 // Attach event listeners dynamically
